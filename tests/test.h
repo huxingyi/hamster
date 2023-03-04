@@ -8,7 +8,7 @@
 #include <string>
 
 inline bool equals(const double a, const double b) {
-  return std::fabs(a - b) < std::numeric_limits<double>::epsilon();
+  return std::abs(a - b) < std::numeric_limits<double>::epsilon();
 }
 
 #define TEST_CASE(name) void test_##name()
