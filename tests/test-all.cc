@@ -31,7 +31,7 @@ TEST_CASE(Vector3) {
 TEST_CASE(Quaternion) {
   Quaternion q(3.1415926535897932384626, Vector3(0.0, 1.0, 0.0));
   auto vector = Vector3{1.0, 0.0, 0.0};
-  auto rotatedVector = q.rotated(vector);
+  auto rotatedVector = q.rotateVector(vector);
   EXPECT(equals(vector.length(), rotatedVector.length()));
   EXPECT_EQUAL(Vector3<double>::dotProduct(vector, rotatedVector), -1.0);
 }

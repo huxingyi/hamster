@@ -45,7 +45,7 @@ public:
                           other.y() * m_data[1] + other.z() * m_data[0]);
   }
 
-  Vector3<T> rotated(const Vector3<T> &vector) {
+  Vector3<T> rotateVector(const Vector3<T> &vector) {
     auto q = (*this * Quaternion(static_cast<T>(0.0), vector.x(), vector.y(),
                                  vector.z())) *
              conjugated();
