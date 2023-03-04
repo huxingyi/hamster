@@ -1,8 +1,7 @@
 CXX = g++
-CXXFLAGS = -Wall -Wextra -pedantic -std=c++17 -I../
-TARGET = hamster-tests
-SOURCES = \
-	math/vector2.spec.cc
+CXXFLAGS = -Wall -fexceptions -Wextra -pedantic -std=c++17 -I../
+TARGET = test-all
+SOURCES = test-all.cc
 
 all: $(TARGET)
 

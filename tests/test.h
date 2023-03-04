@@ -30,31 +30,11 @@ inline bool equals(const double a, const double b) {
                 << "Expected " << #expr << " to be true, but it was false."    \
                 << std::endl;                                                  \
       ++g_numTestFailures;                                                     \
-    }                                                                          \
-  } while (false)
-
-#define ASSERT(expr)                                                           \
-  do {                                                                         \
-    if (!(expr)) {                                                             \
-      std::cerr << __FILE__ << ":" << __LINE__ << ": "                         \
-                << "Expected " << #expr << " to be true, but it was false."    \
-                << std::endl;                                                  \
-      ++g_numTestFailures;                                                     \
       throw std::exception();                                                  \
     }                                                                          \
   } while (false)
 
 #define EXPECT_EQUAL(val1, val2)                                               \
-  do {                                                                         \
-    if ((val1) != (val2)) {                                                    \
-      std::cerr << __FILE__ << ":" << __LINE__ << ": "                         \
-                << "Expected " << #val1 << " (" << (val1) << ") "              \
-                << "to equal " << #val2 << " (" << (val2) << ")" << std::endl; \
-      ++g_numTestFailures;                                                     \
-    }                                                                          \
-  } while (false)
-
-#define ASSERT_EQUAL(val1, val2)                                               \
   do {                                                                         \
     if ((val1) != (val2)) {                                                    \
       std::cerr << __FILE__ << ":" << __LINE__ << ": "                         \
